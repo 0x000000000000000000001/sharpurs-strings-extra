@@ -93,6 +93,8 @@ workspace:
       path: "../sharpurs-run"
     st:
       path: "../sharpurs-st"
+    strings:
+      path: "../sharpurs-strings"
     unfoldable:
       path: "../sharpurs-unfoldable"
     unsafe-coerce:

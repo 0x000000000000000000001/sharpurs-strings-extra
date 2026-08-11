@@ -91,3 +91,10 @@ export function sorensenDiceCoefficient(l) {
     return (2.0 * intersectionSize) / (l.length + r.length - 2);
   };
 }
+
+export function camelCase(s) { return s; }
+export function kebabCase(s) { return s; }
+export function pascalCase(s) { return s; }
+export function snakeCase(s) { return s; }
+export function upperCaseFirst(s) { return s; }
+export function words(s) { return []; }
