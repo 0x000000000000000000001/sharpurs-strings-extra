@@ -28,6 +28,12 @@ let private isUpper (s: string) =
 let private isLower (s: string) =
     if s.Length = 0 then false else Char.IsLower(s, 0)
 
+let private isDigit (s: string) =
+    if s.Length = 0 then false else Char.IsDigit(s, 0)
+
+let private isLetter (s: string) =
+    if s.Length = 0 then false else Char.IsLetter(s, 0)
+
 let words (str: obj) =
     let s = unbox<string> str
     let res = ResizeArray<string>()
@@ -46,7 +52,11 @@ let words (str: obj) =
             flush()
         else
             if prev <> "" && current.Length > 0 then
-                if isLower prev && isUpper el then
+                let boundary =
+                    (isLower prev && isUpper el)
+                        || (isDigit prev && isLetter el)
+                        || (isLetter prev && isDigit el)
+                if boundary then
                     flush()
             current.Append(el) |> ignore
         prev <- el
