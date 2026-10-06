@@ -13,3 +13,7 @@ bower_components
 node_modules
 *.lock
 package-lock.json
+
+# Local scratch experiments
+/scratch*.fsx
+/scratch.go
